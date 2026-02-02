@@ -1,10 +1,10 @@
 import requests
-apiKey = "ca48f74c00fc1ba1e6f86999e6462258"
 city_name = "Delhi"
+apiKey = "ca48f74c00fc1ba1e6f86999e6462258"
+apiUrl = f'https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${apiKey}&units=metric'
 
-url = f"https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${apiKey}&units=metric"
-response = requests.get(url)
+response = requests.get(apiUrl)
+data = response.json()  
+print(data)
 
-print(response.status_code)   # 200 means success
-print(response.json())    
 
